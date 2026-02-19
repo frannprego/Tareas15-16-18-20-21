@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_alumno_sueno_form" model="ir.ui.view">
+        <field name="name">alumno.sueno.form</field>
+        <field name="model">alumno.sueno</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="nivel_sueno"/>
+                        <field name="bebida_recomendada"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_alumno_sueno" model="ir.actions.act_window">
+        <field name="name">Alumnos Sueno</field>
+        <field name="res_model">alumno.sueno</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_gestion_sueno_root" name="Gestion Sueno" sequence="10"/>
+    <menuitem id="menu_alumno_sueno" name="Alumnos" parent="menu_gestion_sueno_root" action="action_alumno_sueno"/>
+
+    <record id="view_partner_form_fidelidad" model="ir.ui.view">
+        <field name="name">res.partner.form.fidelidad</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='internal_notes']" position="after">
+                <page string="Membresia" name="membresia">
+                    <group>
+                        <field name="x_codigo_socio"/>
+                        <field name="x_nivel_fidelidad" readonly="1"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
