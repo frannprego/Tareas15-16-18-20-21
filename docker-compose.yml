@@ -9,8 +9,9 @@ services:
       - POSTGRES_DB=postgres
     volumes:
       - odoo-db-data:/var/lib/postgresql/data
+
     ports:
-      - "5432:5432"
+      - "5433:5432"
 
   odoo:
     image: odoo:18.0
@@ -18,7 +19,7 @@ services:
     depends_on:
       - db
     ports:
-      - "8069:8069"
+      - "8070:8069"
     environment:
       - DB_HOST=db
       - DB_PORT=5432
@@ -27,7 +28,6 @@ services:
       - DB_NAME=postgres
     volumes:
       - ./odoo-web:/var/lib/odoo
-      - ./config:/etc/odoo
       - ./extra-addons:/mnt/extra-addons
     restart: always
 
