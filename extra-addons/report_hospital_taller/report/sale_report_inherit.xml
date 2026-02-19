@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_saleorder_document_inherit" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[@class='page']" position="inside">
+            <div class="mt-4" style="color: grey; font-size: 10px; border-top: 1px solid #eee; padding-top: 10px;">
+                <p><strong>Aviso importante:</strong> El horario de recepción de mercancía y atención telefónica es de Lunes a Viernes de 08:00 a 16:00.</p>
+            </div>
+        </xpath>
+    </template>
+</odoo>

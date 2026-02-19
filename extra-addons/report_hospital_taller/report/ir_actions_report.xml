@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_hoja_taller" model="ir.actions.report">
+        <field name="name">Hoja de Taller (Sin Precios)</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">report_hospital_taller.report_hoja_taller_template</field>
+        <field name="report_file">report_hospital_taller.report_hoja_taller_template</field>
+        <field name="print_report_name">'Hoja de Taller - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
